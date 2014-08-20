@@ -1,0 +1,16 @@
+{
+    "contents" : "##\n## Implementation of caching the inverse of a matrix\n## rather than computing it repeatedly\n##\n##\n\n## Creates a special \"matrix\" object that can cache its inverse\n## and actually a list containing a function to\n## 1.  set the value of the matrix\n## 2.  get the value of the matrix\n## 3.  set the value of the inverse\n## 4.  get the value of the inverse.\nmakeCacheMatrix <- function(x = matrix()) {\n  m <- NULL\n  set <- function(y) {\n    x <<- y\n    m <<- NULL\n  }\n  get <- function() x\n  setinverse <- function(inverse) m <<- inverse\n  getinverse <- function() m\n  list(set = set,\n       get = get,\n       setinverse = setinverse,\n       getinverse = getinverse)\n  \n}\n\n\n## Computes the inverse of the special\n## \"matrix\" returned by `makeCacheMatrix` above. If the inverse has\n## already been calculated (and the matrix has not changed), then\n## `cacheSolve` retrieves the inverse from the cache.\ncacheSolve <- function(x, ...) {\n  ## Return a matrix that is the inverse of 'x'\n  m <- x$getinverse()\n  if(!is.null(m)) {\n    message(\"getting cached data\")\n    return(m)\n  }\n  data <- x$get()\n  m <- solve(data, ...)\n  x$setinverse(m)\n  m\n}\n",
+    "created" : 1408562040853.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2763963294",
+    "id" : "901FFDD2",
+    "lastKnownWriteTime" : 1408569534,
+    "path" : "D:/git/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

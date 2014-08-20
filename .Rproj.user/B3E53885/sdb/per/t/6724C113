@@ -1,0 +1,17 @@
+{
+    "contents" : "source('cachematrix.R')\nA <- matrix(1:4,2,2)      ## make a square matrix A\nAm <- makeCacheMatrix(A)  ## set matrix A into cache\nAi <- cacheSolve(Am)      ## solve matrix using cache\nAi                        ## inverse matrix\n##[,1] [,2]\n##[1,]   -2  1.5\n##[2,]    1 -0.5\nsolve(A)                  ## compare result\n##[,1] [,2]\n##[1,]   -2  1.5\n##[2,]    1 -0.5\ncacheSolve(Am)\n",
+    "created" : 1408562640013.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1098317937",
+    "id" : "6724C113",
+    "lastKnownWriteTime" : 1408569659,
+    "path" : "D:/git/ProgrammingAssignment2/cachematrix.test.R",
+    "project_path" : "cachematrix.test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
